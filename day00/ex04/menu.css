@@ -1,0 +1,41 @@
+body {
+    background-color: #fbf8f8;
+}
+nav {
+    background-color: #292D39;
+    height: 50px;
+    color: #666e80;
+}
+ul, a {
+    list-style: none;
+    color: #666e80;
+    padding-inline-start: 0px;
+    padding: 0;
+}
+.submenu {
+    display: none;
+}
+.main {
+    display: flex;
+}
+li {
+    list-style: none;
+    display: block;
+    width: 100px;
+    text-align: center;
+    height: 50px;
+    background-color: #292D39;
+    padding: 0;
+}
+a {
+    display: block;
+    text-decoration:none;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+a:hover {
+    color: white;
+}
+li:hover .submenu{
+    display: inline-block;
+}
