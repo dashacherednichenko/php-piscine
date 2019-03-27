@@ -6,6 +6,7 @@
 	<style>
 		body {
 			background-color: #fbf8f8;
+			color: rgba(68, 79, 87, 0.8);
 			text-align: center;
 		}
 		table {width: 100%;}
@@ -15,6 +16,9 @@
 			height: 80px;
 			vertical-align: top;
 			font-size: 22px;
+		}
+		td:hover {
+			color: darkblue;
 		}
 		.empty-thin {
 			width: 1%;
@@ -45,6 +49,9 @@
 		.unknown {background-color: #e8e8e8}
 		img {
 			filter: grayscale(80%);
+			float: right;
+			max-width: 200px;
+			width: 20%;
 		}
 		img:hover {
 			filter: grayscale(0%);
@@ -52,7 +59,7 @@
 	</style>
 </head>
 <body>
-	<img style="float: right; max-width: 200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Medeleeff_by_repin.jpg/400px-Medeleeff_by_repin.jpg" alt="Mendeleiev" title="Dimitri Mendeleïev">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Medeleeff_by_repin.jpg/400px-Medeleeff_by_repin.jpg" alt="Mendeleiev" title="Dimitri Mendeleïev">
 	<h1>Periodic table</h1>
 	<h3>by Dimitri Mendeleïev</h3>
 	<table contenteditable="true">
