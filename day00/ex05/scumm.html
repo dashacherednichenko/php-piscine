@@ -22,11 +22,11 @@
 		</div>
 		<div id="middle">
 			<div class="divs left">
-				<img src="resources/arrow.png" alt="Advance" title="Advance">
-				<img src="resources/main.png" alt="Take" title="Take">
-				<img src="resources/oeil.png" alt="Look" title="Look" class="active">
-				<img src="resources/outil.png" alt="Use" title="Use">
-				<img src="resources/chat-icon.png" alt="Speak" title="Speak">
+				<img src="resources/arrow.png" alt="Advance" title="Advance" class="menu_img" onclick="make_active(this)">
+				<img src="resources/main.png" alt="Take" title="Take" class="menu_img" onclick="make_active(this)">
+				<img src="resources/oeil.png" alt="Look" title="Look" class="menu_img active" onclick="make_active(this)">
+				<img src="resources/outil.png" alt="Use" title="Use"  class="menu_img" onclick="make_active(this)">
+				<img src="resources/chat-icon.png" alt="Speak" title="Speak" onclick="start_chat(this)" id="img_chat"  class="menu_img">
 			</div>
 			<div class="divs main-img">
 				<img src="resources/cluster.jpg" alt="cluster" title="cluster">
@@ -34,19 +34,20 @@
 				<a href="https://www.apple.com" id="apple-link" title="go_to_apple"></a>
 			</div>
 			<div class="divs right">
-				<img src="resources/book.png" alt="book" title="book">
-				<img src="resources/towel.png" alt="towel" title="towel">
-				<div id="wall" title="wall">
+				<img src="resources/book.png" alt="book" title="book"  class="menu_img" onclick="make_active(this)">
+				<img src="resources/towel.png" alt="towel" title="towel"  class="menu_img" onclick="make_active(this)">
+				<div id="wall" title="wall"  class="menu_img" onclick="make_active(this)">
 				</div>
 			</div>
 		</div>
 		<div id="answer-form">
 			Vous <span class="bigger">entrez</span> alors dans une grande piece remplie<br>
 			d'<span class="shadow">ordinateurs</span>...<br>
-			- Bonjour, vous êtes nouveau ici ?
-			<form action="#" id="form">
-				<input type="text" name="question" value="">
-				<input type="submit" value="Repondre">
+			- Hello, enter your name below!
+			<form id="form" action="">
+				<input type="text" name="question" value="" id="question">
+				<input type="submit" value="Submit" onclick="hello()">
+				<h1 id="hello_name"></h1>
 			</form>
 		</div>
 	</div>
