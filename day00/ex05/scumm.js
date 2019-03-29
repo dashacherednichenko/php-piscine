@@ -13,8 +13,9 @@ var img_length = images_menu.length;
 // addEventListener("click", function() {
 // 	console.log("Щёлк!");
 // });
-console.log("images_menu", img_length);
+// console.log("images_menu", img_length);
 var make_active = function (img) {
+	// console.log("THIS", img);
 	for (var i = 0; i < img_length; i++)
 	{
 		images_menu[i].setAttribute("class", "menu_img");
@@ -35,7 +36,7 @@ var hello = function () {
 	var answer = document.getElementById("question").value;
 	var h1 = document.getElementById("hello_name");
 	console.log(h1);
-	h1.innerHTML = "HELLO, " + answer +"! =)";
+	h1.innerHTML = "HELLO, " + answer + "! =)";
 
 	console.log("answer", answer);
 }

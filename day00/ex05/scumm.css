@@ -89,7 +89,7 @@ body {
     margin: auto;
 }
 #answer-form {
-    display: none;
+    display: block;
     position: relative;
     border-radius: 9px;
     box-shadow: 10px 10px 10px #000000;
@@ -143,4 +143,8 @@ input[type="submit"] {
     z-index: 999;
     margin-top: -260px;
     margin-left: 780px;
+}
+#hello_name {
+    color: white;
+    opacity: 0.5;
 }
