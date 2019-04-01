@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?php
-$nb = preg_match("/toto$/", "ttttoto uytutljkjljtotoljlkjtoto toto");
-print_r($nb);
+    if ($argc == 1)
+        exit (0);
+    $str = trim(preg_replace("/\s+/", " ", $argv[1]));
+echo $str."\n";
 ?>
