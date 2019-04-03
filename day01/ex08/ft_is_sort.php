@@ -1,7 +1,7 @@
 <?php
 function ft_is_sort($tab)
 {
-    if (!$tab)
+    if (!$tab || count($tab) == 1)
         return (1);
     $a = $tab;
     $sort_a = $tab;

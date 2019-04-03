@@ -14,6 +14,7 @@ while ($i < $argc)
     $array[$el[0]] = $el[1];
     $i++;
 }
+print_r($array);
 if (array_key_exists($mykey, $array) == FALSE)
     exit();
 foreach ($array as $key => $value)

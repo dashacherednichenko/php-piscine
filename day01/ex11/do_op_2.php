@@ -11,6 +11,9 @@ function error(){
 }
 $str = str_replace(" ", "", $argv[1]);
 $i = 0;
+$a = "";
+$b = "";
+$sign = "";
 while ($i < strlen($str))
 {
     if (is_numeric($str[$i]))
@@ -39,8 +42,14 @@ else if ($sign == '-')
     $result = $a - $b;
 else if ($sign == '*')
     $result = $a * $b;
-else if ($sign == '/')
-    $result = $a / $b;
+else if ($sign == '/') {
+    if ($a == 0 && $b == 0)
+        $result = "NAN";
+    else if ($a != 0 && $b == 0)
+        $result = "INF";
+    else
+        $result = $a / $b;
+}
 else if ($sign == '%')
     $result = $a % $b;
 else
