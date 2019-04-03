@@ -6,7 +6,8 @@ $site = preg_replace("/^https?:\/\//", '', $argv[1]);
 $c = curl_init($argv[1]);
 curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 $str = curl_exec($c);
-if (($http_code = curl_getinfo($c, CURLINFO_HTTP_CODE)) == 200) {
+if (($http_code = curl_getinfo($c, CURLINFO_HTTP_CODE)) == 200 || $http_code == 301) {
+    $str = file_get_contents($argv[1]);
     if (!(file_exists($site) && is_dir($site)))
         mkdir($site);;
 }
@@ -30,7 +31,7 @@ foreach ($images[1] as $img)
     $c_img = curl_init($img);
     curl_setopt($c_img, CURLOPT_RETURNTRANSFER, true);
     $timg = curl_exec($c_img);
-    if (($http_code_img = curl_getinfo($c_img, CURLINFO_HTTP_CODE)) == 200) {
+    if (($http_code_img = curl_getinfo($c_img, CURLINFO_HTTP_CODE)) == 200 || $http_code_img == 301) {
         file_put_contents($site."/".$name[1], $timg);
     }
 }
