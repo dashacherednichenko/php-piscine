@@ -42,7 +42,6 @@
         || preg_match("/^[0-1][0-9]$|^[2][0-3]$/", $date[4][0]) === 0
         || preg_match("/^[0-5][0-9]$/", $date[4][1]) === 0
         || preg_match("/^[0-5][0-9]$/", $date[4][2]) === 0 ? error() : 0;
-//    print_r($date);
     $print = mktime($date[4][0], $date[4][1], $date[4][2], $month, $date[1], $date[3]);
     if ($day != date("N", $print))
         error();

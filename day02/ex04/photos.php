@@ -7,7 +7,6 @@ $c = curl_init($argv[1]);
 curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
 $str = curl_exec($c);
 if (($http_code = curl_getinfo($c, CURLINFO_HTTP_CODE)) == 200) {
-//    echo "http code: ".$http_code."\n";
     if (!(file_exists($site) && is_dir($site)))
         mkdir($site);;
 }
@@ -17,7 +16,6 @@ else {
 }
 curl_close($c);
 preg_match_all('/<img.*?src=\"(.*?[.jpg|.svg|.png|.gif|.webp|.jpeg|.PNG|.JPG|.SVG|.GIF|.WEBP|.JPEG])\".*?>/', $str, $images);
-//print_r($images);
 foreach ($images[1] as $img)
 {
     $img = trim($img);
@@ -28,9 +26,7 @@ foreach ($images[1] as $img)
         else
             $img = $argv[1].$img;
     }
-//    echo "$img\n";
     preg_match('/.*\/(.*[A-Za-z0-9]$)/', $img, $name);
-//    echo $name[1]."\n";
     $c_img = curl_init($img);
     curl_setopt($c_img, CURLOPT_RETURNTRANSFER, true);
     $timg = curl_exec($c_img);

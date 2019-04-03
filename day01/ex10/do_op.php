@@ -22,8 +22,14 @@ else
         else
             $result = $a / $b;
     }
-    else if ($sign == '%')
-        $result = $a % $b;
+    else if ($sign == '%'){
+        if ($a == 0 && $b == 0)
+            $result = "NAN";
+        else if ($a != 0 && $b == 0)
+            $result = "INF";
+        else
+            $result = $a % $b;
+    }
     echo $result."\n";
 }
 ?>
