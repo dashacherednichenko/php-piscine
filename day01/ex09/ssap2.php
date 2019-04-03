@@ -12,7 +12,7 @@ function ft_compare($a, $b)
         $b_index = strpos($cmp, $low_b[$i]);
         if ($a_index < $b_index)
             return (0);
-        else
+        else if ($a_index > $b_index)
             return (1);
         $i++;
     }

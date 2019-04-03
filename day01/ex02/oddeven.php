@@ -16,7 +16,7 @@ while ($stdin)
         echo "'".$nb."' is not a number\n";
     }
     else {
-        if ($nb % 2 == 0)
+        if ($nb[strlen($nb) - 1] % 2 == 0)
             $oddeven = "even";
         else
             $oddeven = "odd";

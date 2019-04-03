@@ -3,17 +3,6 @@ var chat = document.getElementById("answer-form");
 var chat_img;
 var images_menu = document.getElementsByClassName("menu_img");
 var img_length = images_menu.length;
-// [].forEach.call( images_menu, function(el) {
-// 	//вешаем событие
-// 	el.click = function(e) {
-// 		console.log("2", e);
-// 		//производим действия
-// 	}
-// });
-// addEventListener("click", function() {
-// 	console.log("Щёлк!");
-// });
-// console.log("images_menu", img_length);
 var make_active = function (img) {
 	// console.log("THIS", img);
 	for (var i = 0; i < img_length; i++)
