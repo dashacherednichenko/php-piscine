@@ -2,28 +2,20 @@
 <?php
 if ($argc != 2 || file_exists($argv[1]) == 0)
     exit(0);
-$fd = fopen($argv[1], 'r');
-$new_fd = "";
-while ($line = fgets($fd))
-{
-    $line = preg_replace_callback(
-        "/<a(?:.|\n)+<\/a>/",
-        function ($matches) {
-            $matches[0] = preg_replace_callback(
-                "/.*?(?:title=\"(.*?)\")/",
-                function ($matches) {
-                        return str_replace($matches[1] , strtoupper($matches[1]), $matches[0]);
-                },$matches[0]);
-            $matches[0] = preg_replace_callback(
-                "/(>)(.*?)(<)/",
-                function($matches) {
-                    return str_replace($matches[2] , strtoupper($matches[2]), $matches[0]);
-                }, $matches[0]);
-            return str_replace($matches[1] , strtoupper($matches[1]), $matches[0]);
+$fd = file_get_contents($argv[1]);
+echo preg_replace_callback(
+    "/<a [\w\W]*?<\/a>/i",
+    function ($match) {
+        $match = preg_replace_callback("/title[ ]?=[ ]?[\w\W]*?\"(.*?)\"/s",
+            function ($matches) {
+//            print_r($matches);
+             return str_replace($matches[1] , strtoupper($matches[1]), $matches[0]);
+            },$match);
+        $match = preg_replace_callback("/>(.*?)</s",
+            function($match) {
+                return str_replace($match[1] , strtoupper($match[1]), $match[0]);
+            }, $match);
+        return str_replace($match[1] , strtoupper($match[1]), $match[0]);
         },
-        $line);
-    $new_fd = $new_fd.$line;
-}
-fclose($fd);
-echo $new_fd;
+    $fd);
 ?>
